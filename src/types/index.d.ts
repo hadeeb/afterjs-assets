@@ -10,7 +10,7 @@ interface manifest {
 interface AsyncChunkRouteProps extends AsyncRouteProps {
   name?: string
 }
-export interface getAssets {
+export interface getAssetsParam {
   manifest: manifest
   req: Request
   routes: AsyncChunkRouteProps[]

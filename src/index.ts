@@ -1,9 +1,9 @@
 import { matchPath } from "react-router-dom"
-import { getAssets } from "./types"
+import { getAssetsParam } from "./types"
 
 declare var __DEV__: boolean
 
-function getAssests({ req, routes, manifest }: getAssets) {
+function getAssets({ req, routes, manifest }: getAssetsParam) {
   let scripts: string[] = []
   let styles: string[] = []
   const match = routes.find(route => !!matchPath(req.url, route))
@@ -37,4 +37,10 @@ function getAssests({ req, routes, manifest }: getAssets) {
   return { scripts, styles }
 }
 
-export { getAssests }
+/**
+ * @deprecated
+ * use `getAssets`
+ */
+const getAssests = getAssets
+
+export { getAssets, getAssests }
